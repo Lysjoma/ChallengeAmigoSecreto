@@ -134,6 +134,15 @@ ul {
     margin: 20px 0;
 }
 
+
+.name-list {
+    margin-top: 15px;
+    color: #4B69FD;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
 .result-list {
     margin-top: 15px;
     color: #05DF05;
