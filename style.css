@@ -170,6 +170,7 @@ ul {
     background-color: var(--color-button-hover);
 }
 
+/* Botón para reiniciar el juego*/
 .nuevo-juego{
     display: flex;
     align-items: center;

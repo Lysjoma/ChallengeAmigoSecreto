@@ -1,11 +1,17 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
+
+//Creación de variables globales para el Challenge.
+//Variable donde esta la lista de jugadores.
 let arregloNombres = [];
+
+//Variable contador para que no se pueda iniciar el juego sin 2 jugadores o menos.
 let contador =1;
 
+//Función Agregar amigo para agregar un amigo al hacerle click al botón agregar.
 function agregarAmigo(){
     let nombreIngresado = document.getElementById("amigo").value;
 
-    let botonJugar = document.getElementById("button-draw").disabled=false;
+    document.getElementById("button-draw").disabled=false;
 
     if(nombreIngresado.trim() !== ""){
         if(arregloNombres.includes(nombreIngresado)){
@@ -20,6 +26,7 @@ function agregarAmigo(){
     limpiarCampo();
 }
 
+//Función actualizar lista para que los nombres registrados aparezcan en pantalla.
 function actualizarLista(){
     let lista = document.getElementById("listaAmigos");
     lista.innerHTML="";
@@ -32,7 +39,7 @@ function actualizarLista(){
     });
 }
 
-
+//Función del botón sortear amigo donde se saca un jugador al azar y se valida que en el primer intento hayan más de dos jugadores.
 function botonSortearAmigo(){
     if(contador<=1){
         if(arregloNombres.length<=2){
@@ -45,10 +52,12 @@ function botonSortearAmigo(){
     }
 }
 
+//Función limpar campo para limpiar el input despues de agregar un jugador.
 function limpiarCampo(){
     document.getElementById("amigo").value ="";
 }
 
+//Función reiniciar el juego que borra todas las listas y devuelve todos los parametros a su inicio para poder jugar de nuevo.
 function reiniciarJuego(){
 
     arregloNombres = [];
@@ -64,6 +73,7 @@ function reiniciarJuego(){
     contador=1;
 }
 
+//Función sorteo del amigo que realiza toda la logica de sacar el jugador random y elimina al jugador del arreglo para que no se repita.
 function sorteoDelAmigo(){
     let posicionGanadora = Math.floor(Math.random()*arregloNombres.length);
 
